@@ -1,0 +1,10 @@
+.center {
+  width: 100vw;
+  height: 100vh;
+}
+
+.icon-position {
+  position: relative;
+  bottom: 45px;
+  left: calc(100vw / 2 + 16px);
+}

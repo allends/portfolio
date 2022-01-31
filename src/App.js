@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { ChakraProvider } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import './App.css';
+import theme from './theme'
+import ScrollPanel from './Components/ScrollPanel/ScrollPanel';
+import Introduction from './Pages/Introduction/Introduction';
+import AboutMe from './Pages/AboutMe/AboutMe'
+import NavigationBar from './Components/NavigationBar/NavigationBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <div className="container">
+        <NavigationBar />
+        <ScrollPanel>
+          <Introduction />
+        </ScrollPanel>
+        <ScrollPanel>
+          <AboutMe />
+        </ScrollPanel>
+      </div>
+    </ChakraProvider>
   );
 }
 
