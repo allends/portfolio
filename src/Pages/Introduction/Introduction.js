@@ -2,7 +2,6 @@ import React from "react"
 import { Flex, Text, IconButton } from '@chakra-ui/react'
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import './IntroductionStyles.css'
-import { keyboard } from "@testing-library/user-event/dist/keyboard"
 
 function Introduction() {
   const goDown = () => {

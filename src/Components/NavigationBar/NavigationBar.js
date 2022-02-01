@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Text, Icon, IconButton } from "@chakra-ui/react"
+import { Flex, IconButton } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import './NavigationBarStyles.css'

@@ -1,5 +1,4 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import { Flex, Text } from '@chakra-ui/react'
 import './App.css';
 import theme from './theme'
 import ScrollPanel from './Components/ScrollPanel/ScrollPanel';
