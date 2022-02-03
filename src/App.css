@@ -2,6 +2,7 @@
   scroll-snap-type: y mandatory;
   max-height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -13,12 +14,5 @@
 
 .root {
   overflow-y: clip;
-}
-
-.panel {
-  width: 100%;
-  height: 100vh;
-  overflow-y: hidden;
-  scroll-snap-align: start;
 }
 

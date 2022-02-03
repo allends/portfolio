@@ -5,6 +5,7 @@ import ScrollPanel from './Components/ScrollPanel/ScrollPanel'
 import Introduction from './Pages/Introduction/Introduction'
 import AboutMe from './Pages/AboutMe/AboutMe'
 import NavigationBar from './Components/NavigationBar/NavigationBar'
+import ProjectsCollection from './Pages/ProjectsCollection/ProjectsCollection'
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
         <ScrollPanel>
           <div id="aboutme_panel">
             <AboutMe />
+          </div>
+        </ScrollPanel>
+        <ScrollPanel>
+          <div id="projects_panel">
+            <ProjectsCollection />
           </div>
         </ScrollPanel>
       </div>
