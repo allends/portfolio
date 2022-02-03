@@ -1,11 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import { Flex, Text } from '@chakra-ui/react'
 import './App.css';
 import theme from './theme'
-import ScrollPanel from './Components/ScrollPanel/ScrollPanel';
-import Introduction from './Pages/Introduction/Introduction';
+import ScrollPanel from './Components/ScrollPanel/ScrollPanel'
+import Introduction from './Pages/Introduction/Introduction'
 import AboutMe from './Pages/AboutMe/AboutMe'
-import NavigationBar from './Components/NavigationBar/NavigationBar';
+import NavigationBar from './Components/NavigationBar/NavigationBar'
 
 function App() {
   return (
@@ -13,10 +12,14 @@ function App() {
       <div className="container">
         <NavigationBar />
         <ScrollPanel>
-          <Introduction />
+          <div id="introduction_panel">
+            <Introduction />
+          </div>
         </ScrollPanel>
         <ScrollPanel>
-          <AboutMe />
+          <div id="aboutme_panel">
+            <AboutMe />
+          </div>
         </ScrollPanel>
       </div>
     </ChakraProvider>

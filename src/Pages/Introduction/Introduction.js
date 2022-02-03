@@ -1,14 +1,9 @@
 import React from "react"
-import { Flex, Text, IconButton } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import './IntroductionStyles.css'
-import { keyboard } from "@testing-library/user-event/dist/keyboard"
 
 function Introduction() {
-  const goDown = () => {
-    console.log("pushed")
-    document.dispatchEvent(new KeyboardEvent('keydown', {'key': 40}))
-  }
     return (
       <div>
         <Flex direction="column" align="center" justify="center" className="center">
@@ -17,7 +12,7 @@ function Introduction() {
               fontSize="6xl"
               fontWeight='bold'
             >
-              Hi,
+              Hello,
             </Text>
             <Text
               fontSize="6xl"
@@ -25,16 +20,16 @@ function Introduction() {
               bgClip='text'
               fontWeight='bold'
             >
-            my name is Allen.
+            I'm Allen.
             </Text>
           </Flex>
         </Flex>
-        <IconButton 
-          className="icon-position"
-          variant="ghost"
-          onClick={goDown}
-          icon={<ChevronDownIcon w={8} h={8} />}
-        />
+        <a 
+          className="icon-position opaque"
+          href="#aboutme_panel"
+        >
+          <ChevronDownIcon w={8} h={8} />
+        </a>
       </div>
     )
 }
