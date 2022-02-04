@@ -2,31 +2,22 @@ import { ChakraProvider } from '@chakra-ui/react'
 import './App.css';
 import theme from './theme'
 import ScrollPanel from './Components/ScrollPanel/ScrollPanel'
-import Introduction from './Pages/Introduction/Introduction'
-import AboutMe from './Pages/AboutMe/AboutMe'
 import NavigationBar from './Components/NavigationBar/NavigationBar'
-import ProjectsCollection from './Pages/ProjectsCollection/ProjectsCollection'
+
+import { pages } from './index'
+import { initialize } from './firebase'
 
 function App() {
+  initialize()
   return (
     <ChakraProvider theme={theme}>
       <div className="container">
         <NavigationBar />
-        <ScrollPanel>
-          <div id="introduction_panel">
-            <Introduction />
-          </div>
-        </ScrollPanel>
-        <ScrollPanel>
-          <div id="aboutme_panel">
-            <AboutMe />
-          </div>
-        </ScrollPanel>
-        <ScrollPanel>
-          <div id="projects_panel">
-            <ProjectsCollection />
-          </div>
-        </ScrollPanel>
+        {pages.map((page, index) => (
+          <ScrollPanel key={index}>
+            {page}
+          </ScrollPanel>
+        ))}
       </div>
     </ChakraProvider>
   );
