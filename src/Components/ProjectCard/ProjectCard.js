@@ -1,14 +1,30 @@
 import React from 'react'
 import { Box, Image, Text, useBreakpointValue } from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
+import { getImage } from '../../utils'
+import ProjectModal from '../ProjectModal/ProjectModal'
+import './ProjectCardStyles.css'
 
-function ProjectCard({ image, description }) {
+function ProjectCard({ project }) {
+  const { title, description, imageLocation } = project
   const size = useBreakpointValue({default: '3xl', sm: 'lg', md: 'md', lg: '3xl'})
+
+  const [image, setImage] = React.useState(null)
+
+  React.useEffect(() => {
+    getImage(imageLocation).then((response) => setImage(response))
+  }, [])
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+
   return (
-    <Box borderWidth="3px" borderRadius="md" overflow="hidden">
-      <Image src={image} />
+    <Box borderWidth="3px" borderRadius="md" overflow="hidden" onClick={onOpen}>
+      <Image src={image} className="thumbnail" />
       <Text fontSize={size}>
-        {description}
+        {title}
       </Text>
+      <ProjectModal isOpen={isOpen} onClose={onClose} project={project} />
     </Box>
   )
 }
