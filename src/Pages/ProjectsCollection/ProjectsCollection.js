@@ -9,16 +9,16 @@ function ProjectCollection() {
   const [projects, setProjects] = React.useState(null)
 
   const firestore = getFirestore()
-  const getProjects = async () => {
-    const projectsSnap = collection(firestore, 'projects')
-    const projectsList = await getDocs(projectsSnap)
-    const result = projectsList.docs.map((project) => project.data())
-    setProjects(result)
-  }
-
+  
   React.useEffect(() => {
+    const getProjects = async () => {
+      const projectsSnap = collection(firestore, 'projects')
+      const projectsList = await getDocs(projectsSnap)
+      const result = projectsList.docs.map((project) => project.data())
+      setProjects(result)
+    }
     getProjects()
-  }, [])
+  }, [firestore])
     
   return (
     <div>

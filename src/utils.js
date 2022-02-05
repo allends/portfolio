@@ -1,4 +1,3 @@
-import React from 'react'
 import { getDownloadURL, getStorage, ref } from "firebase/storage"
 
 export const getImage = (imageLocation) => {

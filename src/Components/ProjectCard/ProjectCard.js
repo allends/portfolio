@@ -6,14 +6,14 @@ import ProjectModal from '../ProjectModal/ProjectModal'
 import './ProjectCardStyles.css'
 
 function ProjectCard({ project }) {
-  const { title, description, imageLocation } = project
+  const { title, imageLocation } = project
   const size = useBreakpointValue({default: '3xl', sm: 'lg', md: 'md', lg: '3xl'})
 
   const [image, setImage] = React.useState(null)
 
   React.useEffect(() => {
     getImage(imageLocation).then((response) => setImage(response))
-  }, [])
+  }, [imageLocation])
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
