@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Text, SimpleGrid, Spinner } from '@chakra-ui/react'
+import { Flex, Text, Spinner } from '@chakra-ui/react'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 import ProjectCard from "../../Components/ProjectCard/ProjectCard"
 import './ProjectsCollectionStyles.css'
@@ -30,11 +30,11 @@ function ProjectCollection() {
           >
             Projects
           </Text>
-          <SimpleGrid columns={3} spacing={5}>
+          <Flex direction="row" className="projectscroll">
             { projects ? (projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
-            ))) : <Spinner />}
-          </SimpleGrid>
+            ))) : <Spinner /> }
+          </Flex>
         </Flex>
       </Flex>
     </div>

@@ -7,7 +7,7 @@ import './ProjectCardStyles.css'
 
 function ProjectCard({ project }) {
   const { title, imageLocation } = project
-  const size = useBreakpointValue({default: '3xl', sm: 'lg', md: 'md', lg: '3xl'})
+  const size = useBreakpointValue({default: '1xl', sm: 'sm', md: 'md', lg: '1xl'})
 
   const [image, setImage] = React.useState(null)
 
@@ -19,9 +19,9 @@ function ProjectCard({ project }) {
 
 
   return (
-    <Box borderWidth="3px" borderRadius="md" overflow="hidden" onClick={onOpen}>
+    <Box className="projectcard" onClick={onOpen} bgGradient='linear(to-t, #7928CA, #FF0080)'> 
       <Image src={image} className="thumbnail" />
-      <Text fontSize={size}>
+      <Text fontSize={size} fontWeight="bold" align="center" className="cardtext">
         {title}
       </Text>
       <ProjectModal isOpen={isOpen} onClose={onClose} project={project} />
